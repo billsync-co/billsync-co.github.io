@@ -1,0 +1,192 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>BillSync — Privacy Policy</title>
+<style>
+  :root { color-scheme: light dark; }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font: 16px/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: #1a1c1f;
+    background: #fbfbfc;
+    -webkit-text-size-adjust: 100%;
+  }
+  .wrap { max-width: 46rem; margin: 0 auto; padding: 2.5rem 1.25rem 4rem; }
+  h1 { font-size: 1.9rem; line-height: 1.2; margin: 0 0 .25rem; }
+  h2 { font-size: 1.25rem; margin: 2.4rem 0 .6rem; }
+  h3 { font-size: 1.02rem; margin: 1.4rem 0 .3rem; }
+  .meta { color: #5b6069; font-size: .9rem; margin: 0 0 2rem; }
+  p, li { color: #2a2d33; }
+  ul { padding-left: 1.25rem; }
+  li { margin: .3rem 0; }
+  a { color: #0a6b5f; }
+  code { background: rgba(0,0,0,.06); padding: .1em .35em; border-radius: 4px; font-size: .9em; }
+  .callout {
+    border: 1px solid rgba(10,107,95,.35);
+    background: rgba(10,107,95,.06);
+    border-radius: 12px;
+    padding: 1rem 1.15rem;
+    margin: 1.5rem 0;
+  }
+  .callout strong { color: #0a6b5f; }
+  table { border-collapse: collapse; width: 100%; margin: .8rem 0; font-size: .95rem; }
+  th, td { text-align: left; vertical-align: top; padding: .5rem .6rem; border-bottom: 1px solid rgba(0,0,0,.1); }
+  th { color: #5b6069; font-weight: 600; }
+  footer { margin-top: 3rem; padding-top: 1.25rem; border-top: 1px solid rgba(0,0,0,.1); color: #5b6069; font-size: .9rem; }
+  @media (prefers-color-scheme: dark) {
+    body { color: #e6e8ea; background: #16181b; }
+    p, li { color: #cdd0d4; }
+    .meta, th, footer { color: #9aa0a8; }
+    a { color: #4fd1bd; }
+    code { background: rgba(255,255,255,.1); }
+    .callout { border-color: rgba(79,209,189,.35); background: rgba(79,209,189,.08); }
+    .callout strong { color: #4fd1bd; }
+    th, td, footer { border-color: rgba(255,255,255,.12); }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<h1>BillSync Privacy Policy</h1>
+<p class="meta">Last updated 4 September 2026</p>
+
+<p>BillSync is a personal finance tracker and bill-splitter for Android. This policy
+explains what data the app handles, where it goes, and the choices you have. It is
+written to match what the app actually does. If anything here is unclear, email
+<a href="mailto:billsync.co@gmail.com">billsync.co@gmail.com</a>.</p>
+
+<p>BillSync is operated by an individual developer (the “data controller” for the
+purposes of UK and EU data protection law), reachable at the address above.</p>
+
+<div class="callout">
+<strong>The AI assistant runs on your phone.</strong> BillSync Plus includes a chat
+assistant powered by an on-device model. Your questions, its answers, and the summary
+of your finances it reads to answer you are all processed on your phone. BillSync makes
+no network request for artificial intelligence, and no model provider — not us, not
+Google — ever receives your questions or your financial data. The only related
+transfer is a one-time download of the model file itself, which carries none of your
+data.
+</div>
+
+<h2>What data BillSync handles</h2>
+
+<h3>Data you provide</h3>
+<ul>
+  <li><strong>Account details:</strong> your email address, and a display name. If you
+    sign in with Google, we receive a Google identity token to establish your account.
+    You may optionally add a profile photo and choose a display currency and an accent
+    colour.</li>
+  <li><strong>Your financial entries:</strong> the expenses, income, budgets, shared
+    bills, splits and settlements you record, and the friends and groups you create.
+    You type these in yourself, or dictate them to the assistant for your confirmation.
+    BillSync never connects to your bank and never asks for bank credentials.</li>
+</ul>
+
+<h3>Data collected automatically</h3>
+<ul>
+  <li><strong>A push notification token</strong> for your device, so the app can send
+    you notifications (a friend request, being added to a bill, a settlement, a group
+    invite).</li>
+  <li><strong>Subscription information</strong> if you buy BillSync Plus: your BillSync
+    account identifier and the purchase are handled through Google Play, and the
+    subscription’s status and expiry are stored so the app knows whether Plus is
+    active.</li>
+</ul>
+
+<p>BillSync contains no analytics or crash-reporting software, and does not build an
+advertising profile of you.</p>
+
+<h2>How your data is stored</h2>
+<p>Your account data — transactions, budgets, friends, groups, bills and settlements —
+is stored in BillSync’s backend, a database hosted on Supabase in the European Union,
+so that it syncs across your sessions and so that friends can split bills with you.
+Access is restricted at the row level: nobody can read a bill they are not part of.
+Data is encrypted in transit. Profile photos are stored in a public bucket, which
+means anyone who has the photo’s web address can view it; do not upload a photo you
+would not want seen.</p>
+
+<h2>Who else receives data, and why</h2>
+<table>
+  <tr><th>Service</th><th>What it receives</th><th>Why</th></tr>
+  <tr><td>Supabase (EU)</td><td>Your account data</td><td>Hosts the database, file storage and server functions</td></tr>
+  <tr><td>Google Firebase Cloud Messaging</td><td>Your device push token and the text of each notification (a name, a bill title, a group name, a settlement amount)</td><td>Delivers push notifications</td></tr>
+  <tr><td>Google Play &amp; the Play Developer API</td><td>Your BillSync account id and the purchase token, at purchase time</td><td>Sells and verifies BillSync Plus</td></tr>
+  <tr><td>Google Sign-In</td><td>A sign-in identity token, only if you choose Google sign-in</td><td>Signs you in</td></tr>
+  <tr><td>Google Fonts</td><td>A font request, including your device’s IP address, when the app loads</td><td>Renders the app’s typefaces</td></tr>
+  <tr><td>Hugging Face</td><td>Your IP address and a standard request header, once, when the assistant’s model downloads</td><td>Delivers the on-device AI model file (no financial data is sent)</td></tr>
+</table>
+<p>These providers act as our processors or as independent controllers of the limited
+data listed. BillSync does not sell your data and does not share it with anyone for
+advertising.</p>
+
+<h2>What other people can see</h2>
+<p>When you split a bill or share a group, the friends and group members involved see
+your display name and avatar, the bills you share with them, and who has paid what.
+Members of a group also see the group’s total spent, which can include bills they are
+not personally on, but never those bills’ titles or the people on them.</p>
+
+<h2>The on-device AI, in detail</h2>
+<p>The assistant uses Google’s Gemma model, which downloads once (about 2.6 GB) and
+then stays on your device. When you ask it something, the app assembles a summary of
+your finances from the same account data described above and runs the model locally to
+produce an answer. Nothing you ask, and nothing it reads, is sent anywhere for
+processing. Any action you approve — logging an expense, splitting a bill, recording a
+settlement — is saved to your account exactly as if you had entered it by hand. The
+conversation itself is not stored; closing the chat discards it.</p>
+
+<h2>How long data is kept</h2>
+<p>Your data is kept while your account exists. When you delete your account (from the
+app’s Settings, once your balances are settled and any Plus subscription is cancelled),
+your personal data — your transactions, budgets, friendships and group memberships —
+is removed, and your name is replaced with an anonymised placeholder on any shared
+bills your friends keep, so their own records stay intact. Anonymised billing and
+subscription records are retained afterwards as an accounting and audit trail. Deleted
+data may persist in encrypted operational backups for a limited period (typically up to
+30 days) before those backups are overwritten.</p>
+
+<h2>Your rights</h2>
+<p>Because your data is held in the EU, UK and EU data protection law applies. You have
+the right to:</p>
+<ul>
+  <li><strong>Access</strong> the data BillSync holds about you.</li>
+  <li><strong>Correct</strong> it — most of your data you can edit directly in the app.</li>
+  <li><strong>Delete</strong> your account and data, from Settings (subject to the
+    conditions above), or by asking us.</li>
+  <li><strong>Receive a copy</strong> of your data, or object to its processing, by
+    contacting us.</li>
+  <li><strong>Complain</strong> to your local data protection authority (in the UK, the
+    Information Commissioner’s Office).</li>
+</ul>
+<p>To exercise any of these, email
+<a href="mailto:billsync.co@gmail.com">billsync.co@gmail.com</a>.</p>
+
+<h2>Children</h2>
+<p>BillSync is not directed to children under 13, and we do not knowingly collect data
+from them. If you believe a child has provided us data, contact us and we will remove
+it.</p>
+
+<h2>Security</h2>
+<p>Data is encrypted in transit, and access to your records is enforced at the database
+level so that only you and the people you share bills with can read them. No system is
+perfectly secure, but we take reasonable measures to protect your information.</p>
+
+<h2>Changes to this policy</h2>
+<p>If this policy changes, we will update the date at the top and, for significant
+changes, note them here. Continued use of BillSync after a change means you accept the
+updated policy.</p>
+
+<h2>Contact</h2>
+<p>Questions, requests, or complaints about privacy:
+<a href="mailto:billsync.co@gmail.com">billsync.co@gmail.com</a>.</p>
+
+<footer>
+BillSync — Privacy Policy. This page is served as static HTML and sets no cookies.
+</footer>
+
+</div>
+</body>
+</html>
