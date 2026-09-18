@@ -52,9 +52,9 @@
 <div class="wrap">
 
 <h1>BillSync Privacy Policy</h1>
-<p class="meta">Last updated 4 September 2026</p>
+<p class="meta">Last updated 18 September 2026</p>
 
-<p>BillSync is a personal finance tracker and bill-splitter for Android. This policy
+<p>BillSync is a personal finance tracker and bill-splitter. This policy
 explains what data the app handles, where it goes, and the choices you have. It is
 written to match what the app actually does. If anything here is unclear, email
 <a href="mailto:billsync.co@gmail.com">billsync.co@gmail.com</a>.</p>
@@ -92,7 +92,7 @@ data.
     you notifications (a friend request, being added to a bill, a settlement, a group
     invite).</li>
   <li><strong>Subscription information</strong> if you buy BillSync Plus: your BillSync
-    account identifier and the purchase are handled through Google Play, and the
+    account identifier and the purchase are handled through Google Play or the App Store, and the
     subscription’s status and expiry are stored so the app knows whether Plus is
     active.</li>
 </ul>
@@ -114,8 +114,10 @@ would not want seen.</p>
   <tr><th>Service</th><th>What it receives</th><th>Why</th></tr>
   <tr><td>Supabase (EU)</td><td>Your account data</td><td>Hosts the database, file storage and server functions</td></tr>
   <tr><td>Google Firebase Cloud Messaging</td><td>Your device push token and the text of each notification (a name, a bill title, a group name, a settlement amount)</td><td>Delivers push notifications</td></tr>
-  <tr><td>Google Play &amp; the Play Developer API</td><td>Your BillSync account id and the purchase token, at purchase time</td><td>Sells and verifies BillSync Plus</td></tr>
+  <tr><td>Google Play &amp; the Play Developer API</td><td>Your BillSync account id and the purchase token, at purchase time</td><td>Sells and verifies BillSync Plus (Android)</td></tr>
+  <tr><td>App Store &amp; Apple Server API</td><td>Your BillSync account id and the purchase receipt, at purchase time</td><td>Sells and verifies BillSync Plus (iOS)</td></tr>
   <tr><td>Google Sign-In</td><td>A sign-in identity token, only if you choose Google sign-in</td><td>Signs you in</td></tr>
+  <tr><td>Sign in with Apple</td><td>A sign-in identity token (and your name and email on first use), only if you choose Apple sign-in</td><td>Signs you in</td></tr>
   <tr><td>Google Fonts</td><td>A font request, including your device’s IP address, when the app loads</td><td>Renders the app’s typefaces</td></tr>
   <tr><td>Hugging Face</td><td>Your IP address and a standard request header, once, when the assistant’s model downloads</td><td>Delivers the on-device AI model file (no financial data is sent)</td></tr>
 </table>
