@@ -52,9 +52,9 @@
 <div class="wrap">
 
 <h1>BillSync Privacy Policy</h1>
-<p class="meta">Last updated 18 September 2026</p>
+<p class="meta">Last updated 8 October 2026</p>
 
-<p>BillSync is a personal finance tracker and bill-splitter. This policy
+<p>BillSync is a personal finance tracker and bill-splitter for Android and iPhone. This policy
 explains what data the app handles, where it goes, and the choices you have. It is
 written to match what the app actually does. If anything here is unclear, email
 <a href="mailto:billsync.co@gmail.com">billsync.co@gmail.com</a>.</p>
@@ -76,25 +76,42 @@ data.
 
 <h3>Data you provide</h3>
 <ul>
-  <li><strong>Account details:</strong> your email address, and a display name. If you
-    sign in with Google, we receive a Google identity token to establish your account.
-    You may optionally add a profile photo and choose a display currency and an accent
-    colour.</li>
+  <li><strong>Account details:</strong> your email address, and a display name. Other
+    people find your BillSync account by typing your exact email address, which is how
+    friend requests reach you. If you sign in with Google, Google gives BillSync a
+    one-time identity token to establish your account, and your Google display name and
+    profile photo are copied to your BillSync profile. If you sign in with Apple, Apple
+    gives BillSync a one-time identity token and your email address, or a private relay
+    address if you choose to hide your email (then only someone who knows that relay
+    address can find you), and, the first time only, your name, which becomes your display
+    name unless you have already chosen one. If no name comes with your sign-in, your
+    display name starts as the part of your email address before the &ldquo;@&rdquo;, which
+    the people who can see your name will see; for a hidden Apple address that part is
+    enough to find you, so give yourself a name in Profile. You may optionally add a profile photo of
+    your own and choose a display currency. Your accent colour is saved on your device
+    only and never reaches our servers.</li>
   <li><strong>Your financial entries:</strong> the expenses, income, budgets, shared
     bills, splits and settlements you record, and the friends and groups you create.
-    You type these in yourself, or dictate them to the assistant for your confirmation.
-    BillSync never connects to your bank and never asks for bank credentials.</li>
+    You type these in yourself, dictate them to the assistant, or photograph a receipt
+    for it to read, and nothing is saved until you confirm it. BillSync never connects to
+    your bank and never asks for bank credentials.</li>
 </ul>
 
 <h3>Data collected automatically</h3>
 <ul>
-  <li><strong>A push notification token</strong> for your device, so the app can send
-    you notifications (a friend request, being added to a bill, a settlement, a group
-    invite).</li>
+  <li><strong>A push notification token</strong> for your device, and a per-installation
+    identifier created by Google&rsquo;s messaging service, so the app can send you
+    notifications (a friend request, being added to a bill or a group, a bill declined or
+    removed, a settlement, a reminder about money owed). On an iPhone, Apple&rsquo;s push
+    service delivers them.</li>
   <li><strong>Subscription information</strong> if you buy BillSync Plus: your BillSync
-    account identifier and the purchase are handled through Google Play or the App Store, and the
-    subscription’s status and expiry are stored so the app knows whether Plus is
-    active.</li>
+    account identifier goes to Google Play or the App Store with the purchase, and the
+    purchase token or transaction identifier, the plan, its status, renewal state and
+    expiry, together with the record the store returns about the subscription, are stored
+    so the app knows whether Plus is active. The App Store keeps one subscription per Apple
+    ID: if Plus is bought on the same Apple ID from a second BillSync account, the
+    subscription moves to the account that made the latest purchase, and we keep a record
+    of that move with the purchase record.</li>
 </ul>
 
 <p>BillSync contains no analytics or crash-reporting software, and does not build an
@@ -112,22 +129,72 @@ would not want seen.</p>
 <h2>Who else receives data, and why</h2>
 <table>
   <tr><th>Service</th><th>What it receives</th><th>Why</th></tr>
-  <tr><td>Supabase (EU)</td><td>Your account data</td><td>Hosts the database, file storage and server functions</td></tr>
-  <tr><td>Google Firebase Cloud Messaging</td><td>Your device push token and the text of each notification (a name, a bill title, a group name, a settlement amount)</td><td>Delivers push notifications</td></tr>
-  <tr><td>Google Play &amp; the Play Developer API</td><td>Your BillSync account id and the purchase token, at purchase time</td><td>Sells and verifies BillSync Plus (Android)</td></tr>
-  <tr><td>App Store &amp; Apple Server API</td><td>Your BillSync account id and the purchase receipt, at purchase time</td><td>Sells and verifies BillSync Plus (iOS)</td></tr>
-  <tr><td>Google Sign-In</td><td>A sign-in identity token, only if you choose Google sign-in</td><td>Signs you in</td></tr>
-  <tr><td>Sign in with Apple</td><td>A sign-in identity token (and your name and email on first use), only if you choose Apple sign-in</td><td>Signs you in</td></tr>
-  <tr><td>Google Fonts</td><td>A font request, including your device’s IP address, when the app loads</td><td>Renders the app’s typefaces</td></tr>
+  <tr><td>Supabase (database in the EU)</td><td>Your account data</td><td>Hosts the database, file storage and server functions</td></tr>
+  <tr><td>Google Firebase Cloud Messaging</td><td>Your device push token and the text of each notification (a name, a bill title, a group name, an amount owed or settled)</td><td>Delivers push notifications</td></tr>
+  <tr><td>Apple Push Notification service</td><td>On an iPhone, your device push token and the text of each notification, passed on by Firebase Cloud Messaging</td><td>Delivers push notifications to iPhones</td></tr>
+  <tr><td>Google Play &amp; the Play Developer API</td><td>Your BillSync account id and the purchase token, at purchase time</td><td>Sells and verifies BillSync Plus on Android</td></tr>
+  <tr><td>App Store &amp; the App Store Server API</td><td>Your BillSync account id with the purchase, then the transaction identifier when we check it</td><td>Sells and verifies BillSync Plus on iPhone</td></tr>
+  <tr><td>Google Sign-In</td><td>The sign-in request and the Google account you choose, only if you use Google sign-in; Google returns an identity token, your name and your photo</td><td>Signs you in</td></tr>
+  <tr><td>Sign in with Apple</td><td>The sign-in request and the Apple ID you choose, only if you use Apple sign-in; Apple returns an identity token, your email address or a relay address, and your name the first time</td><td>Signs you in</td></tr>
+  <tr><td>Google (profile photo hosting)</td><td>A request for a Google-hosted profile photo, including your device’s IP address</td><td>Shows the photos of people who signed in with Google</td></tr>
+  <tr><td>Google Fonts</td><td>A font request, including your device’s IP address, the first time each typeface is needed; the font is then cached on your device</td><td>Renders the app’s typefaces</td></tr>
   <tr><td>Hugging Face</td><td>Your IP address and a standard request header, once, when the assistant’s model downloads</td><td>Delivers the on-device AI model file (no financial data is sent)</td></tr>
 </table>
-<p>These providers act as our processors or as independent controllers of the limited
-data listed. BillSync does not sell your data and does not share it with anyone for
-advertising.</p>
+<p>Supabase and Firebase Cloud Messaging act as our service providers: they process the
+data listed only to run BillSync, on our instructions. Google Play and the App Store are
+not our processors &mdash; each sells the subscription in its own right, and we send it
+your BillSync account identifier with the purchase so that the subscription can be tied to
+your account. Google Sign-In, Sign in with Apple and Apple&rsquo;s push service are
+provided by Google and Apple under their own terms. Google Fonts, Google&rsquo;s photo
+hosting and Hugging Face receive only the request itself, including your device&rsquo;s IP
+address, and act on their own account. BillSync does not sell your data, and shares it with
+nobody for advertising.</p>
+<p>Your account data is stored in the European Union, but some of it is handled outside
+the UK and EU:</p>
+<ul>
+  <li><strong>Supabase</strong> runs BillSync&rsquo;s server functions (checking a purchase
+    with the store, sending a notification) in the region nearest the device or service that
+    calls them, which can be outside the UK and EU, and the company that provides the service
+    to us, Supabase Pte. Ltd, is based in Singapore. Those transfers are covered by the
+    standard contractual clauses and the UK Addendum in Supabase&rsquo;s data processing
+    terms.</li>
+  <li><strong>Google</strong> (Firebase Cloud Messaging) is based in the United States. As
+    our service provider, it handles the push token and the notification text under the
+    safeguards in its data processing terms, such as standard contractual clauses.</li>
+  <li><strong>Apple</strong> and <strong>Google</strong>, as the App Store, Google Play and
+    the sign-in and push services they run in their own right, and <strong>Hugging
+    Face</strong>, are based in the United States and handle what they receive, listed
+    above, under their own terms and privacy policies, not as our processors.</li>
+</ul>
+
+<h2>Why we use your data</h2>
+<ul>
+  <li><strong>To provide BillSync to you</strong> (the contract between us): your account,
+    your entries, shared bills with your friends, notifications, and Plus if you buy
+    it.</li>
+  <li><strong>To keep it secure and fair</strong> (our legitimate interests): limiting how
+    often requests can be made, checking purchases with the store, and stopping one
+    purchase from being used by several accounts.</li>
+  <li><strong>To keep purchase records after an account closes</strong> (our legitimate
+    interests): a store can present the same purchase again at any time, through a restore,
+    a renewal or a refund, and the record is what stops it being claimed by another account,
+    what lets us answer a billing question with the store, and what shows when an App Store
+    subscription moved between accounts. You can object to this, as to any processing based
+    on our legitimate interests, by contacting us.</li>
+</ul>
+<p>Your phone asks before BillSync can show notifications or use the camera, and you can
+turn either off in your phone&rsquo;s settings at any time. Turning notifications off stops
+your phone showing them, but your device stays registered while you are signed in, so
+notifications are still sent to it through the services above; signing out removes the
+registration. A photo from your library is read only when you pick it.</p>
 
 <h2>What other people can see</h2>
 <p>When you split a bill or share a group, the friends and group members involved see
-your display name and avatar, the bills you share with them, and who has paid what.
+your display name and avatar, the bills you share with them, and who has paid what. Your
+display name and photo can also be seen by anyone who has sent you a friend request, or to
+whom you have sent one, before it is accepted. Nobody can see your email address,
+except where your display name was taken from it (see Account details above) and you have
+not changed it.
 Members of a group also see the group’s total spent, which can include bills they are
 not personally on, but never those bills’ titles or the people on them.</p>
 
@@ -137,16 +204,57 @@ then stays on your device. When you ask it something, the app assembles a summar
 your finances from the same account data described above and runs the model locally to
 produce an answer. Nothing you ask, and nothing it reads, is sent anywhere for
 processing. Any action you approve — logging an expense, splitting a bill, recording a
-settlement — is saved to your account exactly as if you had entered it by hand. The
-conversation itself is not stored; closing the chat discards it.</p>
+settlement &mdash; is saved to your account exactly as if you had entered it by hand.
+The conversation is never uploaded and is never written to storage: it is held in memory
+only, and is discarded when you sign out, switch account, or close the app.</p>
+<p>The assistant can also read a photo of a receipt. You take or choose the photo, the app
+shrinks it, and the model reads it on your phone to suggest an entry for you to check. The
+photo is never uploaded and BillSync does not save it: it is held in memory with the
+conversation. Your phone&rsquo;s camera and photo picker may leave a temporary copy in
+BillSync&rsquo;s own cache on the device, which never leaves your phone.</p>
 
-<h2>How long data is kept</h2>
-<p>Your data is kept while your account exists. When you delete your account (from the
-app’s Settings, once your balances are settled and any Plus subscription is cancelled),
-your personal data — your transactions, budgets, friendships and group memberships —
-is removed, and your name is replaced with an anonymised placeholder on any shared
-bills your friends keep, so their own records stay intact. Anonymised billing and
-subscription records are retained afterwards as an accounting and audit trail. Deletion takes effect in BillSync's live systems immediately. Our database provider may hold short-lived operational backups of the database, which are overwritten on the provider's own schedule; BillSync does not use them to restore individual accounts.</p>
+<h2 id="retention">How long data is kept</h2>
+<p>Your data is kept while your account exists. When you delete your account, your
+personal expenses and income, your budgets, your friendships and your group memberships
+are removed, your sign-in and email address are deleted, and your name is replaced with
+the placeholder &ldquo;Deleted User&rdquo; on any shared bills your friends keep, so their
+own records stay intact. Your profile photo is deleted from our storage at the same time;
+if that step fails, email us and we will remove it. A record of your purchases &mdash; the
+store&rsquo;s purchase token or transaction identifier, the plan and the dates, the record
+the store returned about the subscription, and any move of an App Store subscription between
+accounts &mdash; is kept afterwards, for the reasons under <em>Why we use your data</em>
+above, and is no longer linked to your name or email address, with two exceptions: a
+record of a move names both accounts, and if Plus is later bought on the same Apple ID from
+another BillSync account, that subscription and its purchase record move to that account.
+Deletion
+takes effect in BillSync&rsquo;s live systems immediately, apart from short-lived
+operational logs. Our database provider may hold short-lived operational backups of the
+database, which are overwritten on the provider&rsquo;s own schedule; BillSync does not use
+them to restore individual accounts.</p>
+
+<h2 id="data-deletion">Request account deletion</h2>
+<p>You can delete your BillSync account and its data yourself, in the app: open
+<strong>Profile &rarr; Close account</strong>, at the bottom of the Profile tab, and confirm
+(in earlier versions of the app, <strong>Settings &rarr; Close account</strong>). You do not need
+the app to make the request &mdash; email
+<a href="mailto:billsync.co@gmail.com">billsync.co@gmail.com</a> from the address on your
+BillSync account, ask for your account to be deleted, and we will delete it and confirm by
+reply.</p>
+<p>Two things must be true before an account can be closed, and BillSync says so if they
+are not:</p>
+<ul>
+  <li>Every shared bill between you and your friends is settled.</li>
+  <li>Your BillSync Plus subscription has stopped billing. A subscription that is active,
+    in its grace period, on hold or paused must first be cancelled in Google Play or the
+    App Store, wherever you bought it. A
+    subscription you have already cancelled does not block deletion, even if its paid
+    period has not run out; the remainder of that period is lost when the account
+    goes.</li>
+</ul>
+<p>What deletion removes, and the purchase record it keeps, are described under
+<a href="#retention">How long data is kept</a> above. If you signed in with Apple, you can
+also stop BillSync using your Apple ID: on an iPhone, open your Apple ID settings, find
+<strong>Sign in with Apple</strong>, choose BillSync and stop using it.</p>
 
 <h2>Your rights</h2>
 <p>Because your data is held in the EU, UK and EU data protection law applies. You have
@@ -154,7 +262,7 @@ the right to:</p>
 <ul>
   <li><strong>Access</strong> the data BillSync holds about you.</li>
   <li><strong>Correct</strong> it — most of your data you can edit directly in the app.</li>
-  <li><strong>Delete</strong> your account and data, from Settings (subject to the
+  <li><strong>Delete</strong> your account and data, from your Profile (subject to the
     conditions above), or by asking us.</li>
   <li><strong>Receive a copy</strong> of your data, or object to its processing, by
     contacting us.</li>
@@ -170,14 +278,24 @@ from them. If you believe a child has provided us data, contact us and we will r
 it.</p>
 
 <h2>Security</h2>
-<p>Data is encrypted in transit, and access to your records is enforced at the database
-level so that only you and the people you share bills with can read them. No system is
-perfectly secure, but we take reasonable measures to protect your information.</p>
+<p>Data is encrypted in transit. Your bills, splits, settlements, budgets and personal
+transactions are readable only by you and the people who are on them, enforced by
+row-level security in the database. Your display name and profile photo are deliberately
+visible to your friends and group members, as described above, and a profile photo you
+upload is served from a public address. No system is perfectly secure, but we take
+reasonable measures to protect your information.</p>
 
 <h2>Changes to this policy</h2>
 <p>If this policy changes, we will update the date at the top and, for significant
 changes, note them here. Continued use of BillSync after a change means you accept the
 updated policy.</p>
+<ul>
+  <li><strong>8 October 2026:</strong> covers the iPhone app (the App Store, Sign in with
+    Apple and Apple&rsquo;s push service), receipt photos read by the assistant, how an App
+    Store subscription moves between accounts, why we use your data, transfers outside
+    the UK and EU, and what happens when notifications are turned off. Closing your account
+    is now under Profile.</li>
+</ul>
 
 <h2>Contact</h2>
 <p>Questions, requests, or complaints about privacy:
